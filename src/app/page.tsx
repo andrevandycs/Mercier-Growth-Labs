@@ -11,18 +11,21 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <main className="mx-auto flex max-w-225 flex-col gap-30 px-6 py-20 font-sans">
+    <>
       <Background />
 
       <Navbar />
-      <Hero />
-      <FeaturedWork />
-      <Services />
-      <Process />
-      <AboutMe />
-      <Testimonials />
-      <CTA />
-      <Footer />
-    </main>
+
+      <main className="mx-auto flex max-w-225 flex-col gap-30 px-6 py-20 font-sans">
+        <Hero />
+        <FeaturedWork />
+        <Services />
+        <Process />
+        <AboutMe />
+        <Testimonials />
+        <CTA />
+        <Footer />
+      </main>
+    </>
   );
 }
