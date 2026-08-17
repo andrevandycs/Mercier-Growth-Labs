@@ -24,8 +24,9 @@ export default function Home() {
         <AboutMe />
         <Testimonials />
         <CTA />
-        <Footer />
       </main>
+
+      <Footer />
     </>
   );
 }

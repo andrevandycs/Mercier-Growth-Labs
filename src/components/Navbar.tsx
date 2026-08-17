@@ -82,7 +82,7 @@ export default function Navbar() {
         <div className="border-t border-white/5 bg-black/40 px-6 py-6 shadow-2xl backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-6">
             <Link
-              href="#work"
+              href="/work"
               onClick={() => setIsOpen(false)}
               className="text-sm font-medium uppercase tracking-[0.15em] text-neutral-400 transition hover:text-blue-400"
             >
@@ -90,7 +90,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="#services"
+              href="/services"
               onClick={() => setIsOpen(false)}
               className="text-sm font-medium uppercase tracking-[0.15em] text-neutral-400 transition hover:text-blue-400"
             >
@@ -98,7 +98,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="#process"
+              href="/process"
               onClick={() => setIsOpen(false)}
               className="text-sm font-medium uppercase tracking-[0.15em] text-neutral-400 transition hover:text-blue-400"
             >
@@ -106,7 +106,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="#about"
+              href="/about"
               onClick={() => setIsOpen(false)}
               className="text-sm font-medium uppercase tracking-[0.15em] text-neutral-400 transition hover:text-blue-400"
             >
