@@ -8,7 +8,7 @@ export default function CTA() {
   return (
     <section
       id="contact"
-      className="relative border-t border-white/5 px-6 py-28 text-white"
+      className="relative border-t border-white/5 px-6 pt-28 text-white"
     >
       <div className="mx-auto max-w-5xl">
         <motion.div
@@ -38,7 +38,7 @@ export default function CTA() {
 
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="mailto:hello@mercierwebstudio.com"
+              href="/contact"
               className="group inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-blue-500 hover:shadow-[0_0_40px_rgba(37,99,235,.35)]"
             >
               Book a Free Consultation
@@ -46,7 +46,7 @@ export default function CTA() {
             </Link>
 
             <Link
-              href="#work"
+              href="/work"
               className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur transition-all duration-300 hover:border-white/30 hover:bg-white/10"
             >
               View My Work

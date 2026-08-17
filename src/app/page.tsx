@@ -16,10 +16,10 @@ export default function Home() {
 
       <Navbar />
 
-      <main className="mx-auto flex max-w-225 flex-col gap-30 px-6 py-20 font-sans">
+      <main className="mx-auto flex max-w-225 flex-col gap-30 px-6 pt-20 font-sans">
         <Hero />
-        <FeaturedWork />
         <Services />
+        <FeaturedWork />
         <Process />
         <AboutMe />
         <Testimonials />

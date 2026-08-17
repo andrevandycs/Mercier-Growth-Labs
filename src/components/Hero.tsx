@@ -51,7 +51,7 @@ export default function Hero() {
           className="mt-12 flex flex-col gap-4 sm:flex-row"
         >
           <Link
-            href="#contact"
+            href="/contact"
             className="group inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_40px_rgba(37,99,235,.45)]"
           >
             Book a Free Consultation
@@ -59,7 +59,7 @@ export default function Hero() {
           </Link>
 
           <Link
-            href="#work"
+            href="/work"
             className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur transition hover:border-white/30 hover:bg-white/10"
           >
             View My Work

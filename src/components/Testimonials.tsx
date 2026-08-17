@@ -51,7 +51,7 @@ const reasons = [
 
 export default function Testimonials() {
   return (
-    <section className="relative border-t border-white/5 px-6 py-28 text-white">
+    <section className="relative border-t border-white/5 px-6 pt-28 text-white">
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
         <motion.div
@@ -62,7 +62,7 @@ export default function Testimonials() {
           className="mx-auto mb-20 max-w-3xl text-center"
         >
           <p className="font-medium uppercase tracking-[0.3em] text-blue-400">
-            Why Mercier Web Studio
+            Why Mercier Growth Labs
           </p>
 
           <h2 className="mt-4 text-4xl font-black md:text-5xl">

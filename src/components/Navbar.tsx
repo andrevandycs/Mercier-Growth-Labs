@@ -18,37 +18,37 @@ export default function Navbar() {
       <div className="relative mx-auto flex w-full max-w-360 items-center justify-between px-6 py-4 lg:px-10">
         {/* Brand */}
         <Link
-          href="#"
+          href="/"
           className="font-medium uppercase tracking-[0.25em] text-amber-400 transition-transform duration-300 hover:scale-[1.03]"
         >
-          Mercier Web Studio
+          Mercier Growth Labs
         </Link>
 
         {/* Desktop Navigation */}
         <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
           <Link
-            href="#work"
+            href="/work"
             className="text-sm font-medium uppercase tracking-[0.15em] text-neutral-400 transition-colors duration-300 hover:text-blue-400"
           >
             Work
           </Link>
 
           <Link
-            href="#services"
+            href="/services"
             className="text-sm font-medium uppercase tracking-[0.15em] text-neutral-400 transition-colors duration-300 hover:text-blue-400"
           >
             Services
           </Link>
 
           <Link
-            href="#process"
+            href="/process"
             className="text-sm font-medium uppercase tracking-[0.15em] text-neutral-400 transition-colors duration-300 hover:text-blue-400"
           >
             Process
           </Link>
 
           <Link
-            href="#about"
+            href="/about"
             className="text-sm font-medium uppercase tracking-[0.15em] text-neutral-400 transition-colors duration-300 hover:text-blue-400"
           >
             About
@@ -57,7 +57,7 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <Link
-          href="#contact"
+          href="/contact"
           className="group hidden items-center rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.15em] text-white transition duration-300 hover:-translate-y-1 hover:bg-blue-500 md:inline-flex"
         >
           Contact
@@ -114,7 +114,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="#contact"
+              href="/contact"
               onClick={() => setIsOpen(false)}
               className="inline-flex w-fit items-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-white"
             >

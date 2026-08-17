@@ -15,6 +15,7 @@ const services = [
       "Responsive Development",
       "SEO & Performance Optimization",
     ],
+    link: "/services#custom-website-design",
     icon: Globe,
   },
   {
@@ -27,6 +28,7 @@ const services = [
       "Modern Visual Design",
       "Faster Performance",
     ],
+    link: "/services#website-redesign",
     icon: Palette,
   },
   {
@@ -35,6 +37,7 @@ const services = [
     description:
       "High-converting landing pages for advertising campaigns, new products, and lead generation.",
     features: ["Conversion Optimization", "Fast Loading", "Analytics Ready"],
+    link: "/services#landing-pages",
     icon: Smartphone,
   },
   {
@@ -43,6 +46,7 @@ const services = [
     description:
       "Keep your website secure, updated, and performing at its best after launch.",
     features: ["Content Updates", "Bug Fixes", "Ongoing Support"],
+    link: "/services#website-maintenance",
     icon: Gauge,
   },
 ];
@@ -121,7 +125,7 @@ export default function Services() {
                     </p>
 
                     <Link
-                      href="#contact"
+                      href={service.link}
                       className="mt-8 inline-flex items-center font-semibold text-blue-400 transition hover:text-blue-300"
                     >
                       Learn More

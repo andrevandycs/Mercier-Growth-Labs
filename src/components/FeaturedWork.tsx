@@ -11,26 +11,8 @@ const projects = [
     description:
       "Designed and developed a high-performance agency website focused on converting visitors into consultation requests.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-    image: "/projects/agency.png",
-    href: "#",
-  },
-  {
-    title: "Roofing Company",
-    category: "Concept Redesign",
-    description:
-      "Modern website redesign focused on lead generation, trust, and mobile usability.",
-    technologies: ["React", "Next.js", "SEO"],
-    image: "/projects/roofing.png",
-    href: "#",
-  },
-  {
-    title: "Dental Practice",
-    category: "Concept Redesign",
-    description:
-      "Premium redesign with online appointment booking and improved user experience.",
-    technologies: ["Tailwind", "Responsive", "Performance"],
-    image: "/projects/dental.png",
-    href: "#",
+    image: "/images/projects/mercier-growth-labs/card.png",
+    href: "/work#mercier-growth-labs",
   },
 ];
 
@@ -65,7 +47,7 @@ export default function FeaturedWork() {
         </motion.div>
 
         {/* Projects */}
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid gap-8 lg:grid-cols-1">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -140,7 +122,7 @@ export default function FeaturedWork() {
           className="mt-20 flex justify-center"
         >
           <Link
-            href="#contact"
+            href="/contact"
             className="group inline-flex items-center rounded-xl border border-blue-500/50 bg-blue-500/10 px-8 py-4 font-semibold text-blue-400 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-500 hover:text-white hover:shadow-xl hover:shadow-blue-500/20"
           >
             Let's Build Yours

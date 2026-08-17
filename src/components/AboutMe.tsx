@@ -14,7 +14,7 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="relative border-t border-white/5 px-6 py-28 text-white"
+      className="relative border-t border-white/5 px-6 pt-28 text-white"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-20 lg:grid-cols-[1.1fr_0.9fr]">
         {/* Left Content */}
@@ -33,8 +33,8 @@ export default function AboutMe() {
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-neutral-400">
-            I started Mercier Web Studio with one goal: to help businesses stand
-            out online through thoughtful design and modern development.
+            I started Mercier Growth Labs with one goal: to help businesses
+            stand out online through thoughtful design and modern development.
           </p>
 
           <p className="mt-6 text-lg leading-8 text-neutral-400">

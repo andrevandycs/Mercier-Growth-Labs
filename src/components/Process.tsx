@@ -38,7 +38,7 @@ export default function Process() {
   return (
     <section
       id="process"
-      className="relative border-t border-white/5 px-6 py-28 text-white"
+      className="relative border-t border-white/5 px-6 pt-28 text-white"
     >
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
