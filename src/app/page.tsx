@@ -16,7 +16,7 @@ export default function Home() {
 
       <Navbar />
 
-      <main className="mx-auto flex max-w-225 flex-col gap-30 px-6 pt-20 font-sans">
+      <main className="mx-auto flex w-full max-w-7xl flex-col gap-30 px-4 pt-20 font-sans sm:px-6 lg:px-8">
         <Hero />
         <Services />
         <FeaturedWork />
