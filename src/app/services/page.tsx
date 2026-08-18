@@ -3,7 +3,7 @@
 import Background from "../../components/Background";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import { motion } from "framer-motion";
+import MotionSection from "../../components/MotionSection";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -20,6 +20,7 @@ const servicePackages = [
     number: "01",
     icon: Globe,
     title: "Custom Website Design",
+    startingPrice: 2000,
     summary:
       "A brand-led website that looks premium, communicates clearly, and makes it easy for the right prospects to take the next step.",
     description:
@@ -39,6 +40,7 @@ const servicePackages = [
     number: "02",
     icon: Palette,
     title: "Website Redesign",
+    startingPrice: 1500,
     summary:
       "A visual and strategic refresh for businesses with an outdated website that no longer reflects their value or converts well.",
     description:
@@ -58,6 +60,7 @@ const servicePackages = [
     number: "03",
     icon: Smartphone,
     title: "Landing Pages",
+    startingPrice: 750,
     summary:
       "Focused web pages built to turn campaigns, announcements, and traffic into measurable inquiries or sales conversations.",
     description:
@@ -77,6 +80,7 @@ const servicePackages = [
     number: "04",
     icon: Gauge,
     title: "Website Maintenance",
+    startingPrice: 100,
     summary:
       "Ongoing support to keep your website secure, current, and performing at the level your business deserves.",
     description:
@@ -101,7 +105,7 @@ export default function ServicesPage() {
       <Navbar />
 
       <main className="relative mx-auto flex max-w-7xl flex-col gap-20 px-6 pb-24 pt-28 text-white">
-        <motion.section
+        <MotionSection
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -120,14 +124,14 @@ export default function ServicesPage() {
             customers, communicate your value clearly, and create a digital
             experience that inspires trust.
           </p>
-        </motion.section>
+        </MotionSection>
 
         <div className="space-y-8">
           {servicePackages.map((service, index) => {
             const Icon = service.icon;
 
             return (
-              <motion.section
+              <MotionSection
                 key={service.id}
                 id={service.id}
                 initial={{ opacity: 0, y: 35 }}
@@ -140,14 +144,21 @@ export default function ServicesPage() {
                   className={`grid gap-10 p-8 md:p-12 lg:grid-cols-[0.95fr_1.05fr] ${index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
                 >
                   <div>
-                    <div className="flex items-center gap-5">
-                      <span className="text-5xl font-black text-white/10">
-                        {service.number}
-                      </span>
+                    <div className="flex items-center justify-between gap-5">
+                      <div className="flex items-center gap-5">
+                        <span className="text-5xl font-black text-white/10">
+                          {service.number}
+                        </span>
 
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-500/10">
-                        <Icon className="h-6 w-6 text-blue-400" />
+                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-500/10">
+                          <Icon className="h-6 w-6 text-blue-400" />
+                        </div>
                       </div>
+
+                      <h3 className="flex items-center">
+                        Starting at ${service.startingPrice.toLocaleString()}
+                        {service.id === "website-maintenance" ? "/month" : ""}
+                      </h3>
                     </div>
 
                     <h2 className="mt-7 text-3xl font-black md:text-4xl">
@@ -189,12 +200,12 @@ export default function ServicesPage() {
                     </div>
                   </div>
                 </div>
-              </motion.section>
+              </MotionSection>
             );
           })}
         </div>
 
-        <motion.section
+        <MotionSection
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -220,7 +231,7 @@ export default function ServicesPage() {
               <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>
           </div>
-        </motion.section>
+        </MotionSection>
       </main>
 
       <Footer />

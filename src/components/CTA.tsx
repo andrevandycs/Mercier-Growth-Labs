@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import MotionDiv from "./MotionDiv";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -11,7 +11,7 @@ export default function CTA() {
       className="relative border-t border-white/5 px-6 pt-28 text-white"
     >
       <div className="mx-auto max-w-5xl">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -58,7 +58,7 @@ export default function CTA() {
             <span>✓ Custom-built websites</span>
             <span>✓ Ongoing support available</span>
           </div>
-        </motion.div>
+        </MotionDiv>
       </div>
     </section>
   );

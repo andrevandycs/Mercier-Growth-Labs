@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import MotionDiv from "./MotionDiv";
 import { MessageSquare, PencilRuler, Code2, Rocket } from "lucide-react";
 
 const steps = [
@@ -42,7 +42,7 @@ export default function Process() {
     >
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -62,7 +62,7 @@ export default function Process() {
             creating a website that helps your business attract more customers
             and grow with confidence.
           </p>
-        </motion.div>
+        </MotionDiv>
 
         {/* Timeline */}
         <div className="relative">
@@ -74,7 +74,7 @@ export default function Process() {
               const Icon = step.icon;
 
               return (
-                <motion.div
+                <MotionDiv
                   key={step.number}
                   initial={{ opacity: 0, y: 35 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export default function Process() {
                       {step.description}
                     </p>
                   </div>
-                </motion.div>
+                </MotionDiv>
               );
             })}
           </div>

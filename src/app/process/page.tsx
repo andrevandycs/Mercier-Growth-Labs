@@ -3,7 +3,7 @@
 import Background from "../../components/Background";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import { motion } from "framer-motion";
+import MotionSection from "../../components/MotionSection";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -61,7 +61,7 @@ export default function ProcessPage() {
       <Navbar />
 
       <main className="relative mx-auto flex max-w-7xl flex-col gap-20 px-6 pb-24 pt-28 text-white">
-        <motion.section
+        <MotionSection
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -81,14 +81,14 @@ export default function ProcessPage() {
             build a digital experience designed to earn trust and influence
             action.
           </p>
-        </motion.section>
+        </MotionSection>
 
         <div className="space-y-8">
           {processSteps.map((step, index) => {
             const Icon = step.icon;
 
             return (
-              <motion.section
+              <MotionSection
                 key={step.number}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -127,12 +127,12 @@ export default function ProcessPage() {
                     </div>
                   </div>
                 </div>
-              </motion.section>
+              </MotionSection>
             );
           })}
         </div>
 
-        <motion.section
+        <MotionSection
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -165,9 +165,9 @@ export default function ProcessPage() {
               ))}
             </div>
           </div>
-        </motion.section>
+        </MotionSection>
 
-        <motion.section
+        <MotionSection
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -188,7 +188,7 @@ export default function ProcessPage() {
               <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>
           </div>
-        </motion.section>
+        </MotionSection>
       </main>
 
       <Footer />

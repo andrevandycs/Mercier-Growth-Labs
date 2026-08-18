@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import MotionDiv from "./MotionDiv";
 import { CheckCircle2 } from "lucide-react";
 
 const principles = [
@@ -18,7 +18,7 @@ export default function AboutMe() {
     >
       <div className="mx-auto grid max-w-7xl items-center gap-20 lg:grid-cols-[1.1fr_0.9fr]">
         {/* Left Content */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -49,10 +49,10 @@ export default function AboutMe() {
             become valuable business assets that continue generating results
             long after launch.
           </p>
-        </motion.div>
+        </MotionDiv>
 
         {/* Right Card */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, x: 25 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -84,7 +84,7 @@ export default function AboutMe() {
               growing over time.
             </p>
           </div>
-        </motion.div>
+        </MotionDiv>
       </div>
     </section>
   );

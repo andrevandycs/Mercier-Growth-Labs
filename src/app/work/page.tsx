@@ -3,7 +3,7 @@
 import Background from "../../components/Background";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import { motion } from "framer-motion";
+import MotionSection from "../../components/MotionSection";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -53,7 +53,7 @@ export default function WorkPage() {
 
       <main className="relative mx-auto flex max-w-7xl flex-col gap-20 px-6 pb-24 pt-28 text-white">
         {/* Project Introduction */}
-        <motion.section
+        <MotionSection
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55 }}
@@ -122,10 +122,10 @@ export default function WorkPage() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </MotionSection>
 
         {/* The Objective */}
-        <motion.section
+        <MotionSection
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -168,10 +168,10 @@ export default function WorkPage() {
               );
             })}
           </div>
-        </motion.section>
+        </MotionSection>
 
         {/* The Challenge */}
-        <motion.section
+        <MotionSection
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -209,10 +209,10 @@ export default function WorkPage() {
               </p>
             </div>
           </div>
-        </motion.section>
+        </MotionSection>
 
         {/* Strategy & Structure */}
-        <motion.section
+        <MotionSection
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -300,10 +300,10 @@ export default function WorkPage() {
               </p>
             </div>
           </div>
-        </motion.section>
+        </MotionSection>
 
         {/* Design & Development */}
-        <motion.section
+        <MotionSection
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -346,10 +346,10 @@ export default function WorkPage() {
               services, and case studies.
             </p>
           </div>
-        </motion.section>
+        </MotionSection>
 
         {/* Deliverables */}
-        <motion.section
+        <MotionSection
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -375,10 +375,10 @@ export default function WorkPage() {
               </div>
             ))}
           </div>
-        </motion.section>
+        </MotionSection>
 
         {/* Outcome */}
-        <motion.section
+        <MotionSection
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -425,7 +425,7 @@ export default function WorkPage() {
               Explore Services
             </Link>
           </div>
-        </motion.section>
+        </MotionSection>
       </main>
 
       <Footer />

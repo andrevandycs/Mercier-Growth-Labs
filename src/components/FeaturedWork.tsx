@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import MotionDiv from "./MotionDiv";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
@@ -24,7 +24,7 @@ export default function FeaturedWork() {
     >
       <div className="relative mx-auto max-w-7xl">
         {/* Heading */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -44,12 +44,12 @@ export default function FeaturedWork() {
             conversion in mind—because beautiful websites should also produce
             real business results.
           </p>
-        </motion.div>
+        </MotionDiv>
 
         {/* Projects */}
         <div className="grid gap-8 lg:grid-cols-1">
           {projects.map((project, index) => (
-            <motion.div
+            <MotionDiv
               key={project.title}
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -109,12 +109,12 @@ export default function FeaturedWork() {
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -128,7 +128,7 @@ export default function FeaturedWork() {
             Let's Build Yours
             <ExternalLink className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
-        </motion.div>
+        </MotionDiv>
       </div>
     </section>
   );

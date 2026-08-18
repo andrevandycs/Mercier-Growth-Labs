@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import MotionDiv from "./MotionDiv";
 import {
   Sparkles,
   Gauge,
@@ -54,7 +54,7 @@ export default function Testimonials() {
     <section className="relative border-t border-white/5 px-6 pt-28 text-white">
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -74,7 +74,7 @@ export default function Testimonials() {
             an experience that helps your business grow. Here's what you can
             expect when we work together.
           </p>
-        </motion.div>
+        </MotionDiv>
 
         {/* Grid */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -82,7 +82,7 @@ export default function Testimonials() {
             const Icon = reason.icon;
 
             return (
-              <motion.div
+              <MotionDiv
                 key={reason.title}
                 initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ export default function Testimonials() {
                 <p className="mt-4 leading-7 text-neutral-400">
                   {reason.description}
                 </p>
-              </motion.div>
+              </MotionDiv>
             );
           })}
         </div>

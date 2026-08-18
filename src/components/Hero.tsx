@@ -1,5 +1,6 @@
 "use client";
 
+import MotionDiv from "./MotionDiv";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
@@ -9,14 +10,14 @@ export default function Hero() {
     <section className="relative flex min-h-screen items-center overflow-hidden">
       <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center px-6 text-center lg:px-8">
         {/* Badge */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-8 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300 backdrop-blur"
         >
           Helping businesses build websites that actually generate customers
-        </motion.div>
+        </MotionDiv>
 
         {/* Headline */}
         <motion.h1
@@ -44,7 +45,7 @@ export default function Hero() {
         </motion.p>
 
         {/* Buttons */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45 }}
@@ -64,10 +65,10 @@ export default function Hero() {
           >
             View My Work
           </Link>
-        </motion.div>
+        </MotionDiv>
 
         {/* Stats */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
@@ -87,10 +88,10 @@ export default function Hero() {
             <h2 className="text-3xl font-bold text-white">SEO</h2>
             <p className="mt-2 text-sm text-neutral-400">Optimized</p>
           </div>
-        </motion.div>
+        </MotionDiv>
 
         {/* Scroll Indicator */}
-        <motion.div
+        <MotionDiv
           animate={{ y: [0, 10, 0] }}
           transition={{
             duration: 2,
@@ -99,7 +100,7 @@ export default function Hero() {
           className="mt-24"
         >
           <ChevronDown className="h-8 w-8 text-neutral-500" />
-        </motion.div>
+        </MotionDiv>
       </div>
     </section>
   );

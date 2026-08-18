@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import MotionDiv from "./MotionDiv";
 import { ArrowUpRight, Globe, Palette, Smartphone, Gauge } from "lucide-react";
 import Link from "next/link";
 
@@ -59,7 +59,7 @@ export default function Services() {
     >
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -79,7 +79,7 @@ export default function Services() {
             attract more customers through exceptional design, performance, and
             user experience.
           </p>
-        </motion.div>
+        </MotionDiv>
 
         {/* Services */}
         <div className="space-y-8">
@@ -87,7 +87,7 @@ export default function Services() {
             const Icon = service.icon;
 
             return (
-              <motion.div
+              <MotionDiv
                 key={service.title}
                 initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -153,7 +153,7 @@ export default function Services() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </MotionDiv>
             );
           })}
         </div>
