@@ -6,42 +6,64 @@ import Footer from "../../components/Footer";
 import MotionSection from "../../components/MotionSection";
 import {
   ArrowUpRight,
-  CheckCircle2,
   Code2,
+  ExternalLink,
   LayoutTemplate,
-  MessageSquare,
-  Search,
-  Target,
+  Sparkles,
 } from "lucide-react";
-import Link from "next/link";
 
-const objectives = [
+const projects = [
   {
-    icon: Target,
-    title: "Establish credibility",
-    text: "Create a polished online presence that immediately communicates professionalism, expertise, and attention to detail.",
+    type: "Agency Website",
+    title: "Mercier Growth Labs",
+    description:
+      "The digital home for Mercier Growth Labs—designed to communicate the agency's positioning, showcase its capabilities, and turn prospective clients into conversations.",
+    tags: ["Strategy", "UI/UX Design", "Next.js", "Responsive Design"],
+    href: "/",
+    image: "/images/projects/mercier-growth-labs/card.png",
+    external: false,
+    featured: true,
+    eyebrow: "Built for my own agency",
+    result:
+      "A complete agency website built around positioning, trust, and conversion.",
   },
   {
-    icon: MessageSquare,
-    title: "Clarify the offer",
-    text: "Make it immediately clear what Mercier Growth Labs does, who it helps, and why a custom website can be valuable to a growing business.",
-  },
-  {
-    icon: LayoutTemplate,
-    title: "Guide visitors toward action",
-    text: "Build a clear journey from first impression to inquiry with concise messaging, intentional page structure, and prominent calls to action.",
+    type: "Concept Redesign",
+    title: "Anderson Roofing & Restoration",
+    description:
+      "A modern concept redesign for a Spring, Texas roofing company, reworking an existing web presence into a clearer, more focused experience built around inspections, storm damage, roofing services, and homeowner trust.",
+    tags: [
+      "UX Redesign",
+      "Conversion Strategy",
+      "Next.js",
+      "Responsive Design",
+    ],
+    href: "https://anderson-roofing-demo.vercel.app",
+    image: "/images/projects/anderson-roofing/card.png",
+    external: true,
+    featured: false,
+    eyebrow: "Concept redesign",
+    result:
+      "A clearer path from storm concern or roofing need to a free inspection request.",
   },
 ];
 
-const deliverables = [
-  "Custom visual design and responsive layout",
-  "Conversion-focused homepage structure",
-  "Dedicated Work, Services, Process, About, and Contact pages",
-  "Clear service positioning and supporting copy",
-  "Responsive navigation and mobile-first layouts",
-  "Reusable React and Next.js components",
-  "Performance-conscious frontend implementation",
-  "Clear calls-to-action throughout the experience",
+const capabilities = [
+  {
+    icon: LayoutTemplate,
+    title: "Strategy & UX",
+    text: "Page structure, messaging, user flows, and calls-to-action designed around what visitors need to know before they take the next step.",
+  },
+  {
+    icon: Sparkles,
+    title: "Visual Design",
+    text: "Modern interfaces with strong hierarchy, intentional spacing, responsive layouts, and visual systems that make businesses feel credible.",
+  },
+  {
+    icon: Code2,
+    title: "Development",
+    text: "Fast, responsive websites built with modern frontend technologies and reusable components that are ready to grow with the business.",
+  },
 ];
 
 export default function WorkPage() {
@@ -51,80 +73,179 @@ export default function WorkPage() {
 
       <Navbar />
 
-      <main className="relative mx-auto flex max-w-7xl flex-col gap-20 px-6 pb-24 pt-28 text-white">
-        {/* Project Introduction */}
+      <main className="relative mx-auto flex max-w-7xl flex-col gap-24 px-6 pb-24 pt-28 text-white">
+        {/* Hero */}
         <MotionSection
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55 }}
-          className="rounded-4xl border border-white/10 bg-white/3 p-8 shadow-2xl shadow-blue-500/10 backdrop-blur md:p-12"
+          className="max-w-4xl"
         >
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+          <p className="font-medium uppercase tracking-[0.3em] text-blue-400">
+            Selected Work
+          </p>
+
+          <h1 className="mt-6 text-5xl font-black leading-[1.05] md:text-7xl">
+            Websites built to make businesses look{" "}
+            <span className="text-blue-400">as good as they are.</span>
+          </h1>
+
+          <p className="mt-8 max-w-3xl text-lg leading-8 text-neutral-400 md:text-xl">
+            A selection of websites and concept projects from Mercier Growth
+            Labs. Each project combines strategy, design, and development to
+            create a clearer path from first impression to action.
+          </p>
+        </MotionSection>
+
+        {/* Projects */}
+        <MotionSection
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="grid gap-8 lg:grid-cols-2">
+            {projects.map((project) => (
+              <article
+                key={project.title}
+                className={`group flex h-full flex-col overflow-hidden rounded-4xl border border-white/10 bg-white/3 transition duration-500 hover:-translate-y-1 hover:border-blue-500/30 ${
+                  project.featured ? "shadow-2xl shadow-blue-500/5" : ""
+                }`}
+              >
+                {/* Project Preview */}
+                <div className="relative overflow-hidden border-b border-white/10 bg-black/20">
+                  <div className="relative h-72 overflow-hidden md:h-80">
+                    <img
+                      src={project.image}
+                      alt={`${project.title} website`}
+                      className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.02]"
+                    />
+
+                    <div className="absolute inset-0 bg-linear-to-t from-black/35 via-transparent to-transparent" />
+
+                    <div className="absolute left-8 top-8 right-8 flex items-start justify-between gap-4 md:left-10 md:right-10 md:top-10">
+                      <span className="inline-flex h-8 items-center rounded-full border border-blue-400/20 bg-slate-950/70 px-3 text-xs font-semibold uppercase tracking-[0.2em] text-blue-400 backdrop-blur">
+                        {project.type}
+                      </span>
+
+                      {project.featured && (
+                        <span className="text-xs font-medium uppercase tracking-[0.2em] text-white/60">
+                          Featured
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Content */}
+                <div className="flex flex-1 flex-col p-8 md:p-10">
+                  <p className="text-lg leading-8 text-neutral-300">
+                    {project.description}
+                  </p>
+
+                  <div className="mt-7 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-neutral-400"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 border-t border-white/10 pt-7">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
+                      The focus
+                    </p>
+
+                    <p className="mt-3 leading-7 text-neutral-400">
+                      {project.result}
+                    </p>
+                  </div>
+
+                  <div className="mt-auto pt-8">
+                    {project.external ? (
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/link inline-flex items-center rounded-xl bg-white px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] text-slate-900 transition duration-300 hover:-translate-y-1 hover:bg-blue-50"
+                      >
+                        View Live Concept
+                        <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                      </a>
+                    ) : (
+                      <a
+                        href={project.href}
+                        className="group/link inline-flex items-center rounded-xl bg-white px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] text-slate-900 transition duration-300 hover:-translate-y-1 hover:bg-blue-50"
+                      >
+                        View Website
+                        <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </MotionSection>
+
+        {/* Anderson Case Study */}
+        <MotionSection
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="rounded-4xl border border-white/10 bg-white/3 p-8 md:p-12"
+        >
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
               <p className="font-medium uppercase tracking-[0.3em] text-blue-400">
-                Case Study
+                Featured Concept
               </p>
 
-              <h1 className="mt-6 text-4xl font-black leading-tight md:text-6xl">
-                Mercier Growth Labs
-              </h1>
-
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-neutral-300">
-                The website for Mercier Growth Labs was designed and developed
-                as the foundation of the agency&apos;s online presence—bringing
-                together its positioning, services, process, and approach in a
-                single experience built to turn visitors into potential clients.
-              </p>
-
-              <div className="mt-10 flex flex-wrap gap-3">
-                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-neutral-300">
-                  Strategy
-                </span>
-
-                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-neutral-300">
-                  UI/UX Design
-                </span>
-
-                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-neutral-300">
-                  Next.js Development
-                </span>
-
-                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-neutral-300">
-                  Responsive Design
-                </span>
-              </div>
+              <h2 className="mt-5 text-3xl font-black md:text-5xl">
+                Turning a service-heavy website into a clearer customer journey.
+              </h2>
             </div>
 
-            <div className="rounded-3xl border border-blue-500/20 bg-linear-to-br from-blue-500/10 via-white/5 to-transparent p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
-                Project overview
+            <div className="space-y-6 text-lg leading-8 text-neutral-300">
+              <p>
+                The original Anderson Roofing & Restoration website contained
+                useful information about the company, including its roofing
+                experience, emergency repair availability, insurance guidance,
+                certifications, and services. But the information was presented
+                through an older, more fragmented structure.
               </p>
 
-              <div className="mt-6 space-y-5">
-                <div>
-                  <p className="text-sm text-neutral-500">Project</p>
-                  <p className="mt-1 text-neutral-200">
-                    Mercier Growth Labs Website
-                  </p>
-                </div>
+              <p>
+                The concept redesign reorganizes that information around the
+                homeowner&apos;s decision-making process: identify the problem,
+                understand the available services, build trust, and request a
+                free inspection.
+              </p>
 
-                <div>
-                  <p className="text-sm text-neutral-500">Role</p>
-                  <p className="mt-1 text-neutral-200">
-                    Strategy, Design & Development
-                  </p>
-                </div>
+              <p>
+                The result is a more focused experience with stronger hierarchy,
+                clearer service positioning, repeated calls-to-action, and a
+                more modern visual system.
+              </p>
 
-                <div>
-                  <p className="text-sm text-neutral-500">Platform</p>
-                  <p className="mt-1 text-neutral-200">Next.js / React</p>
-                </div>
-              </div>
+              <a
+                href="https://anderson-roofing-demo.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center text-sm font-semibold uppercase tracking-[0.18em] text-blue-400 transition hover:text-blue-300"
+              >
+                Explore the full concept
+                <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </a>
             </div>
           </div>
         </MotionSection>
 
-        {/* The Objective */}
+        {/* Capabilities */}
         <MotionSection
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -133,29 +254,28 @@ export default function WorkPage() {
         >
           <div className="max-w-3xl">
             <p className="font-medium uppercase tracking-[0.3em] text-blue-400">
-              The Objective
+              How I Work
             </p>
 
             <h2 className="mt-4 text-3xl font-black md:text-5xl">
-              Build an agency website that could sell the value of the service.
+              More than a good-looking website.
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-neutral-400">
-              Mercier Growth Labs needed more than a website that simply looked
-              professional. The site needed to communicate the agency&apos;s
-              value proposition quickly, explain its services clearly, and give
-              prospective clients a reason to start a conversation.
+              The goal is to build an online presence that communicates value
+              quickly, earns trust, and gives visitors a clear reason to take
+              the next step.
             </p>
           </div>
 
           <div className="mt-10 grid gap-8 lg:grid-cols-3">
-            {objectives.map((item) => {
+            {capabilities.map((item) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.title}
-                  className="rounded-3xl border border-white/10 bg-white/3 p-6"
+                  className="rounded-3xl border border-white/10 bg-white/3 p-7"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-500/10">
                     <Icon className="h-5 w-5 text-blue-400" />
@@ -170,214 +290,7 @@ export default function WorkPage() {
           </div>
         </MotionSection>
 
-        {/* The Challenge */}
-        <MotionSection
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="rounded-4xl border border-white/10 bg-white/3 p-8 md:p-12"
-        >
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
-            <div>
-              <p className="font-medium uppercase tracking-[0.3em] text-blue-400">
-                The Challenge
-              </p>
-
-              <h2 className="mt-4 text-3xl font-black md:text-5xl">
-                Make a new agency feel established from the first visit.
-              </h2>
-            </div>
-
-            <div className="space-y-6 text-lg leading-8 text-neutral-300">
-              <p>
-                As the agency&apos;s primary digital touchpoint, the website
-                needed to establish trust before a prospective client ever
-                reached out.
-              </p>
-
-              <p>
-                That meant balancing a strong visual identity with enough
-                substance to explain the services, demonstrate the agency&apos;s
-                approach, and make the next step feel straightforward.
-              </p>
-
-              <p>
-                The challenge was not simply to make the site look good. It was
-                to make the design, messaging, and structure work together as a
-                sales tool.
-              </p>
-            </div>
-          </div>
-        </MotionSection>
-
-        {/* Strategy & Structure */}
-        <MotionSection
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="max-w-3xl">
-            <p className="font-medium uppercase tracking-[0.3em] text-blue-400">
-              The Approach
-            </p>
-
-            <h2 className="mt-4 text-3xl font-black md:text-5xl">
-              Structure the site around the questions a potential client
-              actually has.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-neutral-400">
-              Rather than treating each page as an isolated destination, the
-              website was structured as a connected journey from awareness to
-              inquiry.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-8 lg:grid-cols-2">
-            <div className="rounded-3xl border border-white/10 bg-black/20 p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
-                01 — First impression
-              </p>
-
-              <h3 className="mt-5 text-2xl font-bold">
-                The homepage establishes the value immediately.
-              </h3>
-
-              <p className="mt-4 leading-7 text-neutral-400">
-                The hero communicates what Mercier Growth Labs does while the
-                sections that follow introduce services, featured work, the
-                process, and the agency itself.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-black/20 p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
-                02 — Build confidence
-              </p>
-
-              <h3 className="mt-5 text-2xl font-bold">
-                Supporting pages answer the questions behind the inquiry.
-              </h3>
-
-              <p className="mt-4 leading-7 text-neutral-400">
-                Services explain the offer, Process explains how projects work,
-                About introduces the person behind the agency, and Work
-                demonstrates the approach through a real project.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-black/20 p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
-                03 — Reduce friction
-              </p>
-
-              <h3 className="mt-5 text-2xl font-bold">
-                Calls to action are placed where visitors are ready to act.
-              </h3>
-
-              <p className="mt-4 leading-7 text-neutral-400">
-                Rather than relying on a single contact point, the site
-                repeatedly provides a clear next step without overwhelming the
-                visitor.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-black/20 p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
-                04 — Stay consistent
-              </p>
-
-              <h3 className="mt-5 text-2xl font-bold">
-                A unified visual system ties the experience together.
-              </h3>
-
-              <p className="mt-4 leading-7 text-neutral-400">
-                Typography, spacing, cards, borders, color, motion, and
-                navigation were designed to feel consistent across the entire
-                site.
-              </p>
-            </div>
-          </div>
-        </MotionSection>
-
-        {/* Design & Development */}
-        <MotionSection
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]"
-        >
-          <div className="rounded-4xl border border-white/10 bg-linear-to-br from-blue-500/10 to-transparent p-8 md:p-10">
-            <LayoutTemplate className="h-8 w-8 text-blue-400" />
-
-            <p className="mt-8 font-medium uppercase tracking-[0.3em] text-blue-400">
-              Design
-            </p>
-
-            <h3 className="mt-4 text-3xl font-black">
-              Premium without getting in the way of the message.
-            </h3>
-
-            <p className="mt-5 leading-8 text-neutral-300">
-              The visual direction uses strong typography, restrained color,
-              layered surfaces, subtle motion, and generous spacing to create a
-              modern feel while keeping the content easy to scan.
-            </p>
-          </div>
-
-          <div className="rounded-4xl border border-white/10 bg-white/3 p-8 md:p-10">
-            <Code2 className="h-8 w-8 text-blue-400" />
-
-            <p className="mt-8 font-medium uppercase tracking-[0.3em] text-blue-400">
-              Development
-            </p>
-
-            <h3 className="mt-4 text-3xl font-black">
-              A flexible frontend built for the agency to grow.
-            </h3>
-
-            <p className="mt-5 leading-8 text-neutral-300">
-              The site was implemented in Next.js with reusable components and
-              responsive layouts, making it easier to maintain the design and
-              expand the site as Mercier Growth Labs adds new projects,
-              services, and case studies.
-            </p>
-          </div>
-        </MotionSection>
-
-        {/* Deliverables */}
-        <MotionSection
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="rounded-4xl border border-white/10 bg-white/3 p-8 md:p-12"
-        >
-          <div className="max-w-3xl">
-            <p className="font-medium uppercase tracking-[0.3em] text-blue-400">
-              What Was Delivered
-            </p>
-
-            <h2 className="mt-4 text-3xl font-black md:text-5xl">
-              A complete digital foundation for the agency.
-            </h2>
-          </div>
-
-          <div className="mt-10 grid gap-x-12 gap-y-5 md:grid-cols-2">
-            {deliverables.map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-blue-400" />
-
-                <span className="leading-7 text-neutral-300">{item}</span>
-              </div>
-            ))}
-          </div>
-        </MotionSection>
-
-        {/* Outcome */}
+        {/* CTA */}
         <MotionSection
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -385,45 +298,36 @@ export default function WorkPage() {
           transition={{ duration: 0.5 }}
           className="rounded-4xl border border-blue-500/20 bg-blue-500/10 p-8 md:p-12"
         >
-          <div className="max-w-4xl">
+          <div className="max-w-3xl">
             <p className="font-medium uppercase tracking-[0.3em] text-blue-400">
-              The Result
+              Have a project in mind?
             </p>
 
             <h2 className="mt-4 text-3xl font-black md:text-5xl">
-              A website designed to represent the agency before the first
-              conversation.
+              Let&apos;s build something your customers can trust.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-neutral-200">
-              The finished site gives Mercier Growth Labs a professional home
-              base for its brand, services, process, and portfolio. More
-              importantly, it establishes the same standard of quality the
-              agency aims to deliver for its own clients.
-            </p>
-
-            <p className="mt-5 text-lg leading-8 text-neutral-300">
-              As the agency grows, this foundation can grow with it—adding
-              client projects, case studies, testimonials, and new services
-              without having to rethink the entire experience.
+            <p className="mt-6 text-lg leading-8 text-neutral-300">
+              If your current website doesn&apos;t reflect the quality of your
+              business, let&apos;s change that.
             </p>
           </div>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link
+            <a
               href="/contact"
               className="group inline-flex items-center rounded-xl bg-white px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-slate-900 transition duration-300 hover:-translate-y-1 hover:bg-blue-50"
             >
               Start a Project
               <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </Link>
+            </a>
 
-            <Link
+            <a
               href="/services"
               className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-neutral-200 transition duration-300 hover:border-blue-500/40 hover:text-blue-400"
             >
               Explore Services
-            </Link>
+            </a>
           </div>
         </MotionSection>
       </main>

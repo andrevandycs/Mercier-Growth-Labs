@@ -14,6 +14,15 @@ const projects = [
     image: "/images/projects/mercier-growth-labs/card.png",
     href: "/work#mercier-growth-labs",
   },
+  {
+    title: "Anderson Roofing & Restoration",
+    category: "Concept Redesign",
+    description:
+      "A modern concept redesign for a Spring, Texas roofing company, reworking an existing web presence into a clearer, more focused experience built around inspections, storm damage, roofing services, and homeowner trust.",
+    technologies: ["Next.js", "Typescript", "Tailwind CSS"],
+    image: "/images/projects/anderson-roofing/card.png",
+    href: "/work#anderson-roofing-and-restoration",
+  },
 ];
 
 export default function FeaturedWork() {
@@ -47,7 +56,7 @@ export default function FeaturedWork() {
         </MotionDiv>
 
         {/* Projects */}
-        <div className="grid gap-8 lg:grid-cols-1">
+        <div className="grid gap-8 lg:grid-cols-2">
           {projects.map((project, index) => (
             <MotionDiv
               key={project.title}
